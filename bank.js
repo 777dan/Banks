@@ -1,116 +1,3 @@
-// let card1 = {
-//     number: 55322,
-//     bank: "My bank",
-//     name: "Вася",
-//     surname: "Васин",
-//     code: 3333,
-//     account: 2000,
-// };
-
-// let card2 = {
-//     number: 39484,
-//     bank: "My bank",
-//     name: "Петя",
-//     surname: "Петин",
-//     code: 2222,
-//     account: 300,
-// };
-
-// let card3 = {
-//     number: 34484,
-//     bank: "My bank",
-//     name: "Кирилл",
-//     surname: "Гончаров",
-//     code: 2112,
-//     account: 360,
-// };
-
-// let bank = [card1, card2, card3];
-// let checkTF = false;
-// let checkCard;
-// let bankAccount;
-// let nameB1;
-// let surnameU1;
-// let nameU1;
-// let codeC1;
-
-// let cashMashine3 = {
-//     getMoney: function (numC, codeC) {
-//         for (let i = 0; i < bank.length; i++) {
-//             codeC1 = bank[i].code;
-//             checkCard = bank[i].number;
-//             let bankAccount = bank[i].account
-//             if (numC == checkCard && codeC == codeC1) {
-//                 checkTF = true;
-//                 alert("Вы успешно проверены");
-//                 let ques1 = prompt("Введите сумму для вывода");
-//                 console.log(bankAccount);
-//                 bank[i].account = bankAccount - ques1;
-//                 console.log(bank[i].account);
-//                 break;
-//             }
-//             else {
-//                 checkTF = false;
-//                 // alert("Неверный номер карты. Введите снова");
-//             }
-//         }
-//         checking2();
-//     },
-// };
-// function checking2() {
-//     if (checkTF == false) {
-//         alert("Неверный номер карты. Введите снова");
-//     }
-// }
-// cashMashine3.getMoney(prompt("Введите свой номер карточки"), prompt("Введите код карты"));
-
-
-
-
-
-
-
-// function BankAccount1(account1) {
-//     alert(account1);
-// }
-
-// function CashMachine(numC, codeC) {
-//     for (let i = 0; i < bank.length; i++) {
-//         codeC1 = bank[i].code;
-//         checkCard = bank[i].number;
-//         let bankAccount = bank[i].account
-//         if (numC == checkCard && codeC == codeC1) {
-//             checkTF = true;
-//             alert("Вы успешно проверены");
-//             let question1 = confirm("Показать банковский счёт?");
-//             if (question1 == true) {
-//                 let bankAccount1 = new BankAccount1(bankAccount);
-//                 // bankAccount();
-//             }
-//             // else {
-//             let ques1 = prompt("Введите сумму для вывода");
-//             console.log(bankAccount);
-//             bank[i].account = bankAccount - ques1;
-//             console.log(bank[i].account);
-//             break;
-//             // }
-//         }
-//         else {
-//             checkTF = false;
-//         }
-
-//     }
-//     checking2();
-// }
-
-// function checking2() {
-//     if (checkTF == false) {
-//         alert("Неверный номер карты. Введите снова");
-//     }
-// }
-
-// let cashMachine = new CashMachine(prompt("Введите свой номер карточки"), prompt("Введите код карты"));
-
 let checkTF = false;
 
 
@@ -119,21 +6,35 @@ let bankAccount2 = new BankAccount(64332, "private", "Jane", "William", 3333, 50
 
 function BankAccount(number, bank1, name, surname, code, account) {
     if (checkTF == false) {
-        let cashMachine = new CashMachine(prompt("Введите свой номер карточки"), prompt("Введите код карты"));
-        function CashMachine(numC, codeC) {
-            if (numC == number && codeC == code) {
-                checkTF = true;
-                alert("Вы успешно проверены");
-                let ques1 = prompt("Введите сумму для вывода");
-                console.log(account);
-                account -= ques1
-                console.log(account);
-                checkTF = true;
-            }
-            else {
-                // checkTF = true;
-                alert("Неверный номер карты. Введите снова");
-            }
-        }
+        let cashMachine = new CashMachine(number, code, account, prompt("Введите свой номер карточки"), prompt("Введите код карты"));
+        // function CashMachine(numC, codeC) {
+        //     if (numC == number && codeC == code) {
+        //         checkTF = true;
+        //         alert("Вы успешно проверены");
+        //         let ques1 = prompt("Введите сумму для вывода");
+        //         console.log(account);
+        //         account -= ques1
+        //         console.log(account);
+        //         checkTF = true;
+        //     }
+        //     else {
+        //         alert("Неверный номер карты. Введите снова");
+        //     }
+        // }
+    }
+}
+
+function CashMachine(number, code, account, numC, codeC) {
+    if (numC == number && codeC == code) {
+        checkTF = true;
+        alert("Вы успешно проверены");
+        let ques1 = prompt("Введите сумму для вывода");
+        console.log(account);
+        account -= ques1
+        console.log(account);
+        checkTF = true;
+    }
+    else {
+        alert("Неверный номер карты. Введите снова");
     }
 }
